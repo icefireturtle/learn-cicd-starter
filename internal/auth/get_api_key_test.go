@@ -25,7 +25,7 @@ func TestGetAPIKeyMalformedError(t *testing.T) {
 	header["Authorization"] = []string{"heresakey ApiKey"}
 
 	got, err := GetAPIKey(header)
-	if err != nil {
+	if err == nil {
 		t.Fatalf("error: %v", err)
 	}
 
